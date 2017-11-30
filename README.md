@@ -13,7 +13,7 @@
 <p>Submit
 	<ol>
 Document that includes description of the business, diagrams that show referential integrity among tables, ER-diagram that includes structural constraints, cardinalities, and relationship types.
-Data in an Excel file. The Excel file must have single table per sheet. The firs line must have attributes.
+	Data in an Excel file. The Excel file must have single table per sheet. The firs line must have attributes.
 The SQL-code file that includes 10 SQL code using DDL, 10 SQL query using DML for analysis of the data. The aim of each query must be provided.
 	</ol>
 </p>
