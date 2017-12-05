@@ -1,26 +1,31 @@
 USE RENTAL;  
 GO
-
+CREATE TABLE LOC(
+	LOC_NO tinyint NOT NULL,
+	state varchar(16) NOT NULL,
+	city varchar(16) NOT NULL,
+	address varchar(32) NOT NULL,
+	PRIMARY KEY (LOC_NO)
+);
 CREATE TABLE EMPLOYEE (
 	SSN char(9) NOT NULL,
 	F_Name varchar(16) NOT NULL,
 	L_Name varchar(16) NOT NULL,
 	Loc_no tinyint NOT NULL,
 	Salary int,
-	PRIMARY KEY (SSN)
+	PRIMARY KEY (SSN),
+	FOREIGN KEY (Loc_no) REFERENCES LOC(LOC_NO)
 );
 CREATE TABLE VEH_LIFESPAN(
-	Type varchar(8) NOT NULL,
+	Type varchar(16) NOT NULL,
 	Miles int NOT NULL,
 	PRIMARY KEY (Type)
 );
 CREATE TABLE VEHICLES (
 	VIN char(17) NOT NULL,
 	Licence char(8) NOT NULL,
-	Model varchar(10),
-	Make varchar(10),
 	Year smallint,
-	Type varchar(8),
+	Type varchar(16),
 	isHandicapAccessable bit NOT NULL,
 	Miles int,
 	PRIMARY KEY (VIN),
@@ -77,13 +82,7 @@ CREATE TABLE PROBLEMS(
 	Problem varchar(20) NOT NULL,
 	FOREIGN KEY (P_ID) REFERENCES POTENTIAL_PROBLEMS(POT_ID)
 );
-CREATE TABLE LOC(
-	LOC_NO smallint NOT NULL,
-	state varchar(16) NOT NULL,
-	city varchar(16) NOT NULL,
-	address varchar(16) NOT NULL,
-	PRIMARY KEY (LOC_NO)
-);
+
 CREATE TABLE DEPENDENTS (
 	E_SSN char(9) NOT NULL,
 	Relation varchar(16) NOT NULL,
