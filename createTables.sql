@@ -17,7 +17,7 @@ CREATE TABLE EMPLOYEE (
 	FOREIGN KEY (Loc_no) REFERENCES LOC(LOC_NO)
 );
 CREATE TABLE VEH_LIFESPAN(
-	Type varchar(16) NOT NULL,
+	Type varchar(20) NOT NULL,
 	Miles int NOT NULL,
 	PRIMARY KEY (Type)
 );
@@ -25,7 +25,7 @@ CREATE TABLE VEHICLES (
 	VIN char(17) NOT NULL,
 	Licence char(8) NOT NULL,
 	Year smallint,
-	Type varchar(16),
+	Type varchar(20),
 	isHandicapAccessable bit NOT NULL,
 	Miles int,
 	PRIMARY KEY (VIN),
